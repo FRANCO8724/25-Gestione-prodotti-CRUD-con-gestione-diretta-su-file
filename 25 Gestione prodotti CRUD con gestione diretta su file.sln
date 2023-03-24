@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "25 Gestione prodotti CRUD con gestione diretta su file", "25 Gestione prodotti CRUD con gestione diretta su file\25 Gestione prodotti CRUD con gestione diretta su file.csproj", "{FDE740BB-C174-47A2-8945-FA8B37AA2B42}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDE740BB-C174-47A2-8945-FA8B37AA2B42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDE740BB-C174-47A2-8945-FA8B37AA2B42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDE740BB-C174-47A2-8945-FA8B37AA2B42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDE740BB-C174-47A2-8945-FA8B37AA2B42}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02F2D817-7A0A-4908-8FDF-E9AF42F7E054}
+	EndGlobalSection
+EndGlobal
