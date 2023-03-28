@@ -65,7 +65,7 @@ namespace _25_Gestione_prodotti_CRUD_con_gestione_diretta_su_file
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-              
+            Aggiorna(sender,e);
         }
 
         //Funzioni di servizio
@@ -147,6 +147,20 @@ namespace _25_Gestione_prodotti_CRUD_con_gestione_diretta_su_file
             File.Move(path + @"/temp.csv", path + @"/lista.txt");
         }
 
+        public void Aggiorna(object sender, EventArgs e)
+        {
+            using (StreamReader sw = File.OpenText(path + @"/lista.txt"))
+            {
+                string s;
+
+                listView1.Items.Clear();
+
+                while ((s = sw.ReadLine()) != null)
+                {
+                    listView1.Items.Add(s);
+                }
+            }
+        }
 
     }
 }

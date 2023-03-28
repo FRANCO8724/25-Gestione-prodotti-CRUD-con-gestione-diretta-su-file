@@ -62,6 +62,7 @@
             this.listView1.Size = new System.Drawing.Size(255, 426);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
             // 
             // Nome
             // 
