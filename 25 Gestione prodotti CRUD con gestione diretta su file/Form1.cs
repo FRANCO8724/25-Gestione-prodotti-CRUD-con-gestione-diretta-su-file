@@ -45,6 +45,8 @@ namespace _25_Gestione_prodotti_CRUD_con_gestione_diretta_su_file
         {
 
             Elimina(newelement.Text);
+            newelement.Text = "";
+            newelement.Focus();
 
         }
 
@@ -92,6 +94,7 @@ namespace _25_Gestione_prodotti_CRUD_con_gestione_diretta_su_file
             File.Move(path + @"/temp.csv",path +  @"/lista.txt");
         }
 
+        
 
     }
 }
