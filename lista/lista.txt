@@ -1,2 +1,3 @@
-Prodotto: adfg , Prezzo: 472 $
-Prodotto: aeth , Prezzo: 47223 $
+Prodotto: t , Prezzo: 5 $
+
+Prodotto: u , Prezzo: 5 $

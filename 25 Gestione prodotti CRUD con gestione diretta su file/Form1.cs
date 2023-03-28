@@ -52,27 +52,31 @@ namespace _25_Gestione_prodotti_CRUD_con_gestione_diretta_su_file
 
         public void Aggiunta(string nome, string prezzo)
         {
-            StreamWriter sw = new StreamWriter(path + @"/lista.txt",true);
+            StreamWriter sw = new StreamWriter(path + @"/lista.txt", true);
             sw.WriteLine("Prodotto: " + nome + " , Prezzo: " + prezzo + " $");
             sw.Close();
         }
 
-        public void Elimina(string nome)    
+        public void Elimina(string nome)
 
         {
             //File di lettura
-            using (StreamReader sw = File.OpenText("lista.txt"))
+            using (StreamReader sw = File.OpenText(path + @"/lista.txt"))
             {
                 string s;
 
                 //File di scrittura
-                using (StreamWriter ws2 = new StreamWriter("temp.csv"))
+                using (StreamWriter ws2 = new StreamWriter(path + @"/temp.csv",false))
                 {
 
                     while ((s = sw.ReadLine()) != null)
                     {
                         //se il nome appartiene alla stringa 
-                        if (s != nome)
+                        if (s.Contains(nome))
+                        {
+                            ws2.WriteLine();
+                        }
+                        else
                         {
                             ws2.WriteLine(s);
                         }
@@ -81,12 +85,17 @@ namespace _25_Gestione_prodotti_CRUD_con_gestione_diretta_su_file
                 }
             }
 
-                //cancello il file principale
-                File.Delete("lista.txt");
+            //cancello il file principale
+            File.Delete(path + @"/lista.txt");
 
-                //e rinomino il file momentaneo, rendendolo il nuovo principale
-                File.Move("temp.csv", "lista.txt");         
+            //e rinomino il file momentaneo, rendendolo il nuovo principale
+            File.Move(path + @"/temp.csv",path +  @"/lista.txt");
         }
+
 
     }
 }
+      
+
+
+
