@@ -50,6 +50,24 @@ namespace _25_Gestione_prodotti_CRUD_con_gestione_diretta_su_file
 
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Modifica(Nome.Text,textBox2.Text, textBox1.Text);
+            Nome.Text = "";
+            Nome.Focus();
+            Prezzo.Text = "";
+            Prezzo.Focus();
+            textBox2.Text = "";
+            textBox2.Focus();
+            textBox1.Text = "";
+            textBox1.Focus();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+              
+        }
+
         //Funzioni di servizio
 
         public void Aggiunta(string nome, string prezzo)
@@ -94,7 +112,41 @@ namespace _25_Gestione_prodotti_CRUD_con_gestione_diretta_su_file
             File.Move(path + @"/temp.csv",path +  @"/lista.txt");
         }
 
-        
+        public void Modifica(string oldnome,string prezzo,string newnome)
+
+        {
+            //File di lettura
+            using (StreamReader sw = File.OpenText(path + @"/lista.txt"))
+            {
+                string s;
+
+                //File di scrittura
+                using (StreamWriter ws2 = new StreamWriter(path + @"/temp.csv", false))
+                {
+
+                    while ((s = sw.ReadLine()) != null)
+                    {
+                        //se il nome appartiene alla stringa 
+                        if (s.Contains(oldnome))
+                        {
+                            ws2.WriteLine("Prodotto: " + newnome + " , Prezzo: " + prezzo + " $");
+                        }
+                        else
+                        {
+                            ws2.WriteLine(s);
+                        }
+
+                    }
+                }
+            }
+
+            //cancello il file principale
+            File.Delete(path + @"/lista.txt");
+
+            //e rinomino il file momentaneo, rendendolo il nuovo principale
+            File.Move(path + @"/temp.csv", path + @"/lista.txt");
+        }
+
 
     }
 }

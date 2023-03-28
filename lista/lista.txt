@@ -1,3 +1,1 @@
-Prodotto: t , Prezzo: 5 $
-
-Prodotto: u , Prezzo: 5 $
+Prodotto: t , Prezzo: 7 $
